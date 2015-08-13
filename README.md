@@ -8,11 +8,11 @@ To use the pagination include pagination.css in your theme
 
 Use below code to your theme where ever you want to show pagination
 
-<?php if (function_exists("pagination")) {
-
-    pagination($additional_loop->max_num_pages);
-
-} ?>
+    <?php if (function_exists("pagination")) {
+    
+        pagination($additional_loop->max_num_pages);
+    
+    } ?>
 
 
 If you found any fault or need improvement kindly share.
