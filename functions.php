@@ -1,4 +1,6 @@
 <?php 
+// custom functions.php template for WordPress Theme Development
+
 // Pagination function
 
 function pagination($pages = '', $range = 4)
@@ -38,8 +40,6 @@ function pagination($pages = '', $range = 4)
      }
 }
 
-
-// custom functions.php template for WordPress Theme Development
 
 // wp_nav_menu
 
