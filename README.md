@@ -18,3 +18,5 @@ Use below code to your theme where ever you want to show pagination
 If you found any fault or need improvement kindly share.
 
 Thank you in advanced!
+
+# Update:
