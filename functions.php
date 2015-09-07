@@ -1,6 +1,36 @@
 <?php 
 // custom functions.php template for WordPress Theme Development
 
+// enable featured image support for posts
+add_theme_support( 'post-thumbnails' ); 
+ 
+if ( ! isset( $content_width ) ) {
+	$content_width = 474;
+}
+
+// add woocommerce support
+
+add_theme_support( 'woocommerce' );
+
+add_filter( 'woocommerce_currencies', 'add_inr_currency' );
+add_filter( 'woocommerce_currency_symbol', 'add_inr_currency_symbol' );
+
+function add_inr_currency( $currencies ) {
+    $currencies['INR'] = 'INR';
+    return $currencies;
+}
+
+function add_inr_currency_symbol( $symbol ) {
+	$currency = get_option( 'woocommerce_currency' );
+	switch( $currency ) {
+		case 'INR': $symbol = 'Rs.'; break;
+	}
+	return $symbol;
+}
+
+// define('WOOCOMMERCE_USE_CSS', false);
+
+
 // Pagination function
 
 function pagination($pages = '', $range = 4)
