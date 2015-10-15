@@ -14,6 +14,20 @@ Use below code to your theme where ever you want to show pagination
     
     } ?>
 
+Use below code for the nav menu creation
+
+    <?php
+        wp_nav_menu( array(
+            'theme_location'    => 'menu_top',
+            'container'     => '',
+            'menu_id' =>false,
+            'menu_class'        => 'nav navbar-nav', 
+            'echo'          => true,
+            'items_wrap'        => '<ul class="%2$s">%3$s</ul>',
+            'depth'         => 10,
+            'walker'        => new themeslug_walker_nav_menu
+        ) );
+    ?>
 
 If you found any fault or need improvement kindly share.
 
