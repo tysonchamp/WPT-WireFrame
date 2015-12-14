@@ -29,6 +29,17 @@ Use below code for the nav menu creation
         ) );
     ?>
 
+To use mailchimp api use below example:
+
+    $email = 'test@test.com'; // email of user
+    $status = 'pending'; // "subscribed" or "unsubscribed" or "cleaned" or "pending"
+    $list_id = 'YOUR LIST ID HERE'; // where to get it read above
+    $api_key = 'YOUR MAILCHIMP API KEY HERE'; // where to get it read above
+    $merge_fields = array('FNAME' => 'test','LNAME' => 'name');
+     
+    rudr_mailchimp_subscriber_status($email, $status, $list_id, $api_key, $merge_fields );
+
+
 If you found any fault or need improvement kindly share.
 
 Thank you in advanced!
