@@ -1,6 +1,25 @@
 <?php 
 // custom functions.php template for WordPress Theme Development
 
+// Function to allow login with email and username both
+function login_with_email_address($username) {
+        $user = get_user_by('email',$username);
+        if(!empty($user->user_login))
+                $username = $user->user_login;
+        return $username;
+}
+add_action('wp_authenticate','login_with_email_address');
+
+
+function change_username_wps_text($text){
+       if(in_array($GLOBALS['pagenow'], array('wp-login.php'))){
+         if ($text == 'Username'){$text = 'Username / Email';}
+            }
+                return $text;
+         }
+add_filter( 'gettext', 'change_username_wps_text' );
+
+
 // Mailchimp 3.0 API integration in wordpress
 
 function rudr_mailchimp_subscriber_status( $email, $status, $list_id, $api_key, $merge_fields = array('FNAME' => '','LNAME' => '') ){
