@@ -1,6 +1,95 @@
 <?php 
 // custom functions.php template for WordPress Theme Development
 
+/*
+ * Enable support for Post Formats.
+ *
+ * See: https://codex.wordpress.org/Post_Formats
+ */
+add_theme_support( 'post-formats', array(
+	'aside',
+	'image',
+	'video',
+	'quote',
+	'link',
+	'gallery',
+	'status',
+	'audio',
+	'chat',
+) );
+
+
+/**
+ * Modifies tag cloud widget arguments to have all tags in the widget same font size.
+ *
+ */
+/*function twentysixteen_widget_tag_cloud_args( $args ) {
+	$args['largest'] = 1;
+	$args['smallest'] = 1;
+	$args['unit'] = 'em';
+	return $args;
+}
+add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );*/
+
+/**
+ * Registers a widget area.
+ *
+ * @link https://developer.wordpress.org/reference/functions/register_sidebar/
+ *
+ */
+function theme_widgets_init() {
+	register_sidebar( array(
+		'name'          => __( 'Sidebar', 'customtheme' ),
+		'id'            => 'sidebar-1',
+		'description'   => __( 'Add widgets here to appear in your sidebar.', 'customtheme' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Content Bottom 1', 'customtheme' ),
+		'id'            => 'sidebar-2',
+		'description'   => __( 'Appears at the bottom of the content on posts and pages.', 'customtheme' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Content Bottom 2', 'customtheme' ),
+		'id'            => 'sidebar-3',
+		'description'   => __( 'Appears at the bottom of the content on posts and pages.', 'customtheme' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Content Bottom 3', 'customtheme' ),
+		'id'            => 'sidebar-4',
+		'description'   => __( 'Appears at the bottom of the content on posts and pages.', 'customtheme' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Content Bottom 4', 'customtheme' ),
+		'id'            => 'sidebar-5',
+		'description'   => __( 'Appears at the bottom of the content on posts and pages.', 'customtheme' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+}
+add_action( 'widgets_init', 'theme_widgets_init' );
+
 // Advanced Custom fields section
 // define( 'ACF_LITE', true );
 include_once('advanced-custom-fields/acf.php');
@@ -267,16 +356,15 @@ function pagination($pages = '', $range = 4)
 
 
 // nav menu start
-
 class themeslug_walker_nav_menu extends Walker_Nav_Menu {
   
 // add classes to ul sub-menus
-function start_lvl( &$output, $depth ) {
+function start_lvl( &$output, $depth = 0, $args = array() ) {
     // depth dependent classes
     $indent = ( $depth > 0  ? str_repeat( "\t", $depth ) : '' ); // code indent
     $display_depth = ( $depth + 1); // because it counts the first submenu as 0
     $classes = array(
-        'dropdown-menu'
+        ''
         );
     $class_names = implode( ' ', $classes );
   
@@ -285,19 +373,17 @@ function start_lvl( &$output, $depth ) {
 }
   
 // add main/sub classes to li's and links
- function start_el( &$output, $item, $depth, $args ) {
+ function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
     global $wp_query;
     $indent = ( $depth > 0 ? str_repeat( "\t", $depth ) : '' ); // code indent
 	  $class_names = $value = '';
-
         //$classes = empty( $item->classes ) ? array() : (array) $item->classes;
-
         $class_names = in_array("current_page_item",$item->classes) ? ' active' : '';
 		$class_names1 = in_array("current-menu-ancestor",$item->classes) ? ' active' : '';
         //$class_names1 = in_array("current_page_item",$item->menu_item_children->classes) ? ' active' : '';
     // depth dependent classes
     $depth_classes = array(
-        ( $depth == 0 ? 'dropdown' : '' ),$class_names,$class_names1
+        ( $depth == 0 ? 'has-sub' : '' ),$class_names,$class_names1
     );
     $depth_class_names = esc_attr( implode( ' ', $depth_classes ) );
   
@@ -313,7 +399,7 @@ function start_lvl( &$output, $depth ) {
     $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
     $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
     $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
-	$attributes.='class="dropdown-toggle hvr-underline-from-center"';
+	$attributes.='class=""';
     //$attributes .= ' class="menu-link ' . ( $depth > 0 ? 'sub-menu-link' : 'main-menu-link' ) . '"';
     $item_output = $args->before;
         $item_output .= '<a'. $attributes .'>';
@@ -331,9 +417,10 @@ function start_lvl( &$output, $depth ) {
 	
   
     // build html
-    $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+    $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args, $id );
 }
 }
+
 add_action( 'after_setup_theme', 'td_setup' );
 
 function td_setup() {
@@ -344,9 +431,8 @@ function td_setup() {
 if ( ! isset( $content_width ) ) {
 	$content_width = 474;
 }
-
-
 // menu end
+
 
 /**
  * Setup the WordPress core custom background feature.
@@ -410,7 +496,12 @@ add_filter('the_excerpt_rss', 'add_custom_content');
 add_filter('the_content', 'add_custom_content'); */
 
 // filter wp seo title
-remove_filter('wp_title', array($wpseo_front, 'title'), 10, 3);
+if ( ! function_exists('is_plugin_inactive')) {
+	require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
+	if ( !is_plugin_inactive('wordpress-seo/wp-seo.php') ) {
+		remove_filter('wp_title', array($wpseo_front, 'title'), 10, 3);
+	}
+}
 
 // remove version info from head and feeds
 function complete_version_removal() {
