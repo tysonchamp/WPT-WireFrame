@@ -48,3 +48,4 @@ Thank you in advanced!
 
 1. Reference to TGM Plugin Activation library that allows you to easily require or recommend plugins for your WordPress themes (and plugins). It allows your users to install, update and even automatically activate plugins in singular or bulk fashion using native WordPress classes, functions and interfaces. https://github.com/TGMPA/TGM-Plugin-Activation
 2. Added Mailchimp 3.0 API
+3. Widgets support added
