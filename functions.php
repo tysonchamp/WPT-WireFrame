@@ -1,5 +1,10 @@
-<?php 
-// custom functions.php template for WordPress Theme Development
+<?php // custom functions.php template for WordPress Theme Development
+
+// Advanced Custom fields section
+// define( 'ACF_LITE', true );
+include_once('acf/acf.php');
+
+
 
 /*
  * Enable support for Post Formats.
@@ -23,83 +28,19 @@ add_theme_support( 'post-formats', array(
  * Modifies tag cloud widget arguments to have all tags in the widget same font size.
  *
  */
-/*function twentysixteen_widget_tag_cloud_args( $args ) {
+function twentysixteen_widget_tag_cloud_args( $args ) {
 	$args['largest'] = 1;
 	$args['smallest'] = 1;
 	$args['unit'] = 'em';
 	return $args;
 }
-add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );*/
-
-/**
- * Registers a widget area.
- *
- * @link https://developer.wordpress.org/reference/functions/register_sidebar/
- *
- */
-function theme_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'customtheme' ),
-		'id'            => 'sidebar-1',
-		'description'   => __( 'Add widgets here to appear in your sidebar.', 'customtheme' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Content Bottom 1', 'customtheme' ),
-		'id'            => 'sidebar-2',
-		'description'   => __( 'Appears at the bottom of the content on posts and pages.', 'customtheme' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Content Bottom 2', 'customtheme' ),
-		'id'            => 'sidebar-3',
-		'description'   => __( 'Appears at the bottom of the content on posts and pages.', 'customtheme' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Content Bottom 3', 'customtheme' ),
-		'id'            => 'sidebar-4',
-		'description'   => __( 'Appears at the bottom of the content on posts and pages.', 'customtheme' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Content Bottom 4', 'customtheme' ),
-		'id'            => 'sidebar-5',
-		'description'   => __( 'Appears at the bottom of the content on posts and pages.', 'customtheme' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'widgets_init', 'theme_widgets_init' );
-
-// Advanced Custom fields section
-// define( 'ACF_LITE', true );
-include_once('advanced-custom-fields/acf.php');
+add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
 
 
 /**
  * Include the TGM_Plugin_Activation class.
  */
 require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
-
 add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
 /**
  * Register the required plugins for this theme.
@@ -121,9 +62,8 @@ function my_theme_register_required_plugins() {
 	 * If the source is NOT from the .org repo, then source is also required.
 	 */
 	$plugins = array(
-
 		// This is an example of how to include a plugin bundled with a theme.
-		array(
+		/*array(
 			'name'               => 'Testimonials Reviews', // The plugin name.
 			'slug'               => 'testimonial_reviews', // The plugin slug (typically the folder name).
 			'source'             => get_template_directory_uri() . '/plugins/testimonial_reviews.zip', // The plugin source.
@@ -133,26 +73,59 @@ function my_theme_register_required_plugins() {
 			'force_deactivation' => true, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 			'external_url'       => '', // If set, overrides default API URL and points to an external URL.
 			'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
-		),
-
+		),*/
 		
 		// This is an example of how to include a plugin from the WordPress Plugin Repository.
 		array(
-			'name'      => 'Responsive Gallery With Lightbox',
-			'slug'      => 'responsive-gallery-with-lightbox',
-			'required'  => true,
+			'name'      => 'Fluid Responsive Slideshow',
+			'slug'      => 'fluid-responsive-slideshow',
+			'required'  => false,
+			'force_deactivation' => true,
 		),
-
-
 		// This is an example of how to include a plugin from the WordPress Plugin Repository.
 		array(
 			'name'      => 'Dynamic Featured Image',
 			'slug'      => 'dynamic-featured-image',
+			'required'  => false,
+			'force_deactivation' => true,
+		),
+		// This is an example of how to include a plugin from the WordPress Plugin Repository.
+		array(
+			'name'      => 'Kiwi Logo Carousel',
+			'slug'      => 'kiwi-logo-carousel',
+			'required'  => true,
+			'force_activation'   => true,
+			'force_deactivation' => true,
+		),
+		// This is an example of how to include a plugin from the WordPress Plugin Repository.
+		array(
+			'name'      => 'Meta Slider',
+			'slug'      => 'ml-slider',
+			'required'  => false,
+			'force_deactivation' => true,
+		),
+		// This is an example of how to include a plugin from the WordPress Plugin Repository.
+		array(
+			'name'      => 'Robo Gallery',
+			'slug'      => 'robo-gallery',
+			'required'  => false,
+			'force_deactivation' => true,
+		),
+		// This is an example of how to include a plugin from the WordPress Plugin Repository.
+		array(
+			'name'      => 'WP likes',
+			'slug'      => 'wp-likes',
+			'required'  => true,
+			'force_activation'   => true,
+			'force_deactivation' => true,
+		),
+		// This is an example of how to include a plugin from the WordPress Plugin Repository.
+		array(
+			'name'      => 'Membership 2',
+			'slug'      => 'membership-2',
 			'required'  => true,
 		),
-
 	);
-
 	/*
 	 * Array of configuration settings. Amend each line as needed.
 	 *
@@ -173,97 +146,18 @@ function my_theme_register_required_plugins() {
 		'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
 		'is_automatic' => false,                   // Automatically activate plugins after installation or not.
 		'message'      => '',                      // Message to output right before the plugins table.
-
-		/*
-		'strings'      => array(
-			'page_title'                      => __( 'Install Required Plugins', 'theme-slug' ),
-			'menu_title'                      => __( 'Install Plugins', 'theme-slug' ),
-			'installing'                      => __( 'Installing Plugin: %s', 'theme-slug' ), // %s = plugin name.
-			'oops'                            => __( 'Something went wrong with the plugin API.', 'theme-slug' ),
-			'notice_can_install_required'     => _n_noop(
-				'This theme requires the following plugin: %1$s.',
-				'This theme requires the following plugins: %1$s.',
-				'theme-slug'
-			), // %1$s = plugin name(s).
-			'notice_can_install_recommended'  => _n_noop(
-				'This theme recommends the following plugin: %1$s.',
-				'This theme recommends the following plugins: %1$s.',
-				'theme-slug'
-			), // %1$s = plugin name(s).
-			'notice_cannot_install'           => _n_noop(
-				'Sorry, but you do not have the correct permissions to install the %1$s plugin.',
-				'Sorry, but you do not have the correct permissions to install the %1$s plugins.',
-				'theme-slug'
-			), // %1$s = plugin name(s).
-			'notice_ask_to_update'            => _n_noop(
-				'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.',
-				'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.',
-				'theme-slug'
-			), // %1$s = plugin name(s).
-			'notice_ask_to_update_maybe'      => _n_noop(
-				'There is an update available for: %1$s.',
-				'There are updates available for the following plugins: %1$s.',
-				'theme-slug'
-			), // %1$s = plugin name(s).
-			'notice_cannot_update'            => _n_noop(
-				'Sorry, but you do not have the correct permissions to update the %1$s plugin.',
-				'Sorry, but you do not have the correct permissions to update the %1$s plugins.',
-				'theme-slug'
-			), // %1$s = plugin name(s).
-			'notice_can_activate_required'    => _n_noop(
-				'The following required plugin is currently inactive: %1$s.',
-				'The following required plugins are currently inactive: %1$s.',
-				'theme-slug'
-			), // %1$s = plugin name(s).
-			'notice_can_activate_recommended' => _n_noop(
-				'The following recommended plugin is currently inactive: %1$s.',
-				'The following recommended plugins are currently inactive: %1$s.',
-				'theme-slug'
-			), // %1$s = plugin name(s).
-			'notice_cannot_activate'          => _n_noop(
-				'Sorry, but you do not have the correct permissions to activate the %1$s plugin.',
-				'Sorry, but you do not have the correct permissions to activate the %1$s plugins.',
-				'theme-slug'
-			), // %1$s = plugin name(s).
-			'install_link'                    => _n_noop(
-				'Begin installing plugin',
-				'Begin installing plugins',
-				'theme-slug'
-			),
-			'update_link' 					  => _n_noop(
-				'Begin updating plugin',
-				'Begin updating plugins',
-				'theme-slug'
-			),
-			'activate_link'                   => _n_noop(
-				'Begin activating plugin',
-				'Begin activating plugins',
-				'theme-slug'
-			),
-			'return'                          => __( 'Return to Required Plugins Installer', 'theme-slug' ),
-			'plugin_activated'                => __( 'Plugin activated successfully.', 'theme-slug' ),
-			'activated_successfully'          => __( 'The following plugin was activated successfully:', 'theme-slug' ),
-			'plugin_already_active'           => __( 'No action taken. Plugin %1$s was already active.', 'theme-slug' ),  // %1$s = plugin name(s).
-			'plugin_needs_higher_version'     => __( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'theme-slug' ),  // %1$s = plugin name(s).
-			'complete'                        => __( 'All plugins installed and activated successfully. %1$s', 'theme-slug' ), // %s = dashboard link.
-			'contact_admin'                   => __( 'Please contact the administrator of this site for help.', 'tgmpa' ),
-
-			'nag_type'                        => 'updated', // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
-		),
-		*/
+		
 	);
-
 	tgmpa( $plugins, $config );
 }
 // END!!
 
 
 // Mailchimp 3.0 API integration in wordpress
-
 function rudr_mailchimp_subscriber_status( $email, $status, $list_id, $api_key, $merge_fields = array('FNAME' => '','LNAME' => '') ){
 	$data = array(
 		'apikey'        => $api_key,
-    		'email_address' => $email,
+    	'email_address' => $email,
 		'status'        => $status,
 		'merge_fields'  => $merge_fields
 	);
@@ -282,8 +176,8 @@ function rudr_mailchimp_subscriber_status( $email, $status, $list_id, $api_key, 
 	$result = curl_exec($mch_api);
 	return $result;
 }
-
 // End of Mailchimp API Function
+
 
 // enable featured image support for posts
 add_theme_support( 'post-thumbnails' ); 
@@ -292,18 +186,15 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 474;
 }
 
+
 // add woocommerce support
-
 add_theme_support( 'woocommerce' );
-
 add_filter( 'woocommerce_currencies', 'add_inr_currency' );
 add_filter( 'woocommerce_currency_symbol', 'add_inr_currency_symbol' );
-
 function add_inr_currency( $currencies ) {
     $currencies['INR'] = 'INR';
     return $currencies;
 }
-
 function add_inr_currency_symbol( $symbol ) {
 	$currency = get_option( 'woocommerce_currency' );
 	switch( $currency ) {
@@ -311,12 +202,10 @@ function add_inr_currency_symbol( $symbol ) {
 	}
 	return $symbol;
 }
-
 // define('WOOCOMMERCE_USE_CSS', false);
 
 
 // Pagination function
-
 function pagination($pages = '', $range = 4)
 {  
      $showitems = ($range * 2)+1;  
@@ -364,7 +253,7 @@ function start_lvl( &$output, $depth = 0, $args = array() ) {
     $indent = ( $depth > 0  ? str_repeat( "\t", $depth ) : '' ); // code indent
     $display_depth = ( $depth + 1); // because it counts the first submenu as 0
     $classes = array(
-        ''
+        'dropdown-menu'
         );
     $class_names = implode( ' ', $classes );
   
@@ -383,7 +272,7 @@ function start_lvl( &$output, $depth = 0, $args = array() ) {
         //$class_names1 = in_array("current_page_item",$item->menu_item_children->classes) ? ' active' : '';
     // depth dependent classes
     $depth_classes = array(
-        ( $depth == 0 ? 'has-sub' : '' ),$class_names,$class_names1
+        ( $depth == 0 ? 'dropdown' : '' ),$class_names,$class_names1
     );
     $depth_class_names = esc_attr( implode( ' ', $depth_classes ) );
   
@@ -391,20 +280,37 @@ function start_lvl( &$output, $depth = 0, $args = array() ) {
     //$classes = empty( $item->classes ) ? array() : (array) $item->classes;
     //$class_names = esc_attr( implode( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) ) );
   
+    $parents = array();
+	if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $args->theme_location ] ) ) {
+		$menu = wp_get_nav_menu_object( $locations[ $args->theme_location ] );
+		$menu_items = wp_get_nav_menu_items($menu->term_id);
+		foreach( $menu_items as $menu_item ) {
+		  if( $menu_item->menu_item_parent != 0 )
+		    $parents[] = $menu_item->menu_item_parent;
+		}
+	}
+
+	$dropdown = ''; $dropdown_toggle = ''; $caret = '';
+	if( in_array($item->ID, $parents ) ) {
+		$dropdown = 'dropdown';
+		$dropdown_toggle = 'dropdown-toggle';
+		$caret = ' <span class="caret"></span>';
+	}
+
     // build html
-    $output .= $indent . '<li id="" class="' . $depth_class_names .'">';
+    $output .= $indent . '<li id="' . $item->ID . '" class="' . $depth_class_names .'">';
   
     // link attributes
     $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
     $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
     $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
     $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
-	$attributes.='class=""';
+	$attributes.='class="' . $dropdown_toggle . '" data-toggle="' . $dropdown . '" aria-expanded="false"';
     //$attributes .= ' class="menu-link ' . ( $depth > 0 ? 'sub-menu-link' : 'main-menu-link' ) . '"';
     $item_output = $args->before;
         $item_output .= '<a'. $attributes .'>';
 		  $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-		  $item_output .= '</a>';
+		  $item_output .= $caret . '</a>';
         $item_output .= $args->after;
    /* $item_output = sprintf( '%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s',
         $args->before,
@@ -425,7 +331,8 @@ add_action( 'after_setup_theme', 'td_setup' );
 
 function td_setup() {
 	register_nav_menus( array(
-		'menu_top' => 'Menu TOP' 
+		'menu_top' => 'Menu TOP',
+		'mobile_top' => 'Mobile Menu'
 	) );
 }
 if ( ! isset( $content_width ) ) {
@@ -434,34 +341,13 @@ if ( ! isset( $content_width ) ) {
 // menu end
 
 
-/**
- * Setup the WordPress core custom background feature.
- *
- * Use add_theme_support to register support for WordPress 3.4+
- * as well as provide backward compatibility for previous versions.
- * Use feature detection of wp_get_theme() which was introduced
- * in WordPress 3.4.
- *
- * Hooks into the after_setup_theme action.
- *
- */
-function shape_register_custom_background() {
-    $args = array(
-        'default-color' => 'ffffff',
-    );
- 
-    $args = apply_filters( 'shape_custom_background_args', $args );
- 
-    if ( function_exists( 'wp_get_theme' ) ) {
-        add_theme_support( 'custom-background', $args );
-    } else {
-        define( 'BACKGROUND_COLOR', $args['default-color'] );
-        define( 'BACKGROUND_IMAGE', $args['default-image'] );
-        add_custom_background();
-    }
-}
-add_action( 'after_setup_theme', 'shape_register_custom_background' );
- 
+// WP Customizer API init
+require_once dirname( __FILE__ ) . '/inc/customizer.php';
+
+
+// widgets init
+require_once dirname( __FILE__ ) . '/inc/widgets.php';
+
 
 // add custom post content
 /*
@@ -485,7 +371,7 @@ add_filter('the_excerpt_rss', 'add_feed_content');
 add_filter('the_content', 'add_feed_content');
 
 
-/* add custom content to feeds and posts
+// add custom content to feeds and posts
 function add_custom_content($content) {
 	if(!is_home()) {
 		$content .= '<p>This article is copyright &copy; '.date('Y').'&nbsp;'.bloginfo('name').'</p>';
@@ -495,13 +381,10 @@ function add_custom_content($content) {
 add_filter('the_excerpt_rss', 'add_custom_content');
 add_filter('the_content', 'add_custom_content'); */
 
+
 // filter wp seo title
-if ( ! function_exists('is_plugin_inactive')) {
-	require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
-	if ( !is_plugin_inactive('wordpress-seo/wp-seo.php') ) {
-		remove_filter('wp_title', array($wpseo_front, 'title'), 10, 3);
-	}
-}
+remove_filter('wp_title', array($wpseo_front, 'title'), 10, 3);
+
 
 // remove version info from head and feeds
 function complete_version_removal() {
@@ -512,7 +395,7 @@ add_filter('the_generator', 'complete_version_removal');
 
 // customize admin footer text
 function custom_admin_footer() {
-	echo '<a href="http://fb.com/tysonchampno1/">Developed By Tyson</a>';
+	echo '<a href="http://www.verticalwebcare.com/">Developed By Vertical Web Care</a>';
 } 
 add_filter('admin_footer_text', 'custom_admin_footer');
 
@@ -524,17 +407,13 @@ remove_filter('pre_user_description', 'wp_filter_kses');
 // delay feed update
 function publish_later_on_feed($where) {
 	global $wpdb;
-
 	if (is_feed()) {
 		// timestamp in WP-format
 		$now = gmdate('Y-m-d H:i:s');
-
 		// value for wait; + device
 		$wait = '5'; // integer
-
 		// http://dev.mysql.com/doc/refman/5.0/en/date-and-time-functions.html#function_timestampdiff
 		$device = 'MINUTE'; // MINUTE, HOUR, DAY, WEEK, MONTH, YEAR
-
 		// add SQL-sytax to default $where
 		$where .= " AND TIMESTAMPDIFF($device, $wpdb->posts.post_date_gmt, '$now') > $wait ";
 	}
@@ -593,19 +472,15 @@ add_action('do_feed_atom', 'fb_disable_feed', 1); */
 
 // customize default gravatars
 function custom_gravatars($avatar_defaults) {
-
 	// change the default gravatar
 	$customGravatar1 = get_bloginfo('template_directory').'/images/gravatar-01.png';
 	$avatar_defaults[$customGravatar1] = 'Default';
-
 	// add a custom user gravatar
 	$customGravatar2 = get_bloginfo('template_directory').'/images/gravatar-02.png';
 	$avatar_defaults[$customGravatar2] = 'Custom Gravatar';
-
 	// add another custom gravatar
 	$customGravatar3 = get_bloginfo('template_directory').'/images/gravatar-03.png';
 	$avatar_defaults[$customGravatar3] = 'Custom gravatar';
-
 	return $avatar_defaults;
 }
 add_filter('avatar_defaults', 'custom_gravatars');
@@ -617,7 +492,6 @@ function my_formatter($content) {
 	$pattern_full = '{(\[raw\].*?\[/raw\])}is';
 	$pattern_contents = '{\[raw\](.*?)\[/raw\]}is';
 	$pieces = preg_split($pattern_full, $content, -1, PREG_SPLIT_DELIM_CAPTURE);
-
 	foreach ($pieces as $piece) {
 		if (preg_match($pattern_contents, $piece, $matches)) {
 			$new_content .= $matches[1];
@@ -625,7 +499,6 @@ function my_formatter($content) {
 			$new_content .= wptexturize(wpautop($piece));
 		}
 	}
-
 	return $new_content;
 }
 remove_filter('the_content', 'wpautop');
@@ -671,5 +544,4 @@ function custom_comments_callback($comment, $args, $depth) {
 		</div>
 
 <?php } // WP adds the closing </li>
-
 ?>
