@@ -392,7 +392,12 @@ add_filter('the_content', 'add_custom_content'); */
 
 
 // filter wp seo title
-remove_filter('wp_title', array($wpseo_front, 'title'), 10, 3);
+if ( !function_exists('is_plugin_inactive')) {
+    require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
+}
+if ( !is_plugin_inactive('wordpress-seo/wp-seo.php') ) {
+	remove_filter('wp_title', array($wpseo_front, 'title'), 10, 3);
+}
 
 
 // remove version info from head and feeds
