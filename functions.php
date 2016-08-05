@@ -134,6 +134,11 @@ function my_theme_register_required_plugins() {
 			'slug'      => 'membership-2',
 			'required'  => true,
 		),
+		array(
+			'name'      => 'Nav Menu Roles',
+			'slug'      => 'nav-menu-roles',
+			'required'  => true,
+		),
 	);
 	/*
 	 * Array of configuration settings. Amend each line as needed.
