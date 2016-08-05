@@ -4,16 +4,6 @@
 // define( 'ACF_LITE', true );
 include_once('acf/acf.php');
 
-// Creating theme Option using ACF
-if( function_exists("acf_add_options_page") ) {
-	acf_add_options_page(array(
-		'page_title' => 'Theme Options',
-		'menu_title' => 'Theme Options',
-		'menu_slug'  => 'theme-options',
-		'capability' => 'edit_posts'
-	));
-}
-
 
 /*
  * Enable support for Post Formats.
@@ -353,6 +343,10 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 474;
 }
 // menu end
+
+
+// Creating theme Option using ACF
+require_once dirname( __FILE__ ) . '/inc/theme-option.php';
 
 
 // WP Customizer API init
