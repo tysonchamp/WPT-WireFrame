@@ -1,29 +1,45 @@
-.pagination {
-clear:both;
-padding:20px 0;
-position:relative;
-font-size:11px;
-line-height:13px;
+
+/* =Index pagination
+----------------------------------------------- */
+
+/* The containing box with a nice white background */
+.paging-navigation {
+	font-family: sans-serif;
+	padding: 1em;
+	background: #fff;
+	background: hsl(0, 0%, 100%);
 }
- 
-.pagination span, .pagination a {
-display:block;
-float:left;
-margin: 2px 2px 2px 0;
-padding:6px 9px 5px 9px;
-text-decoration:none;
-width:auto;
-color:#fff;
-background: #555;
+
+/* Remove bullets and list indentation */
+.paging-navigation ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
 }
- 
-.pagination a:hover{
-color:#fff;
-background: #3279BB;
+
+/* Make the list items appear horizontally */
+.paging-navigation li {
+	display: inline;
 }
- 
-.pagination .current{
-padding:6px 9px 5px 9px;
-background: #3279BB;
-color:#fff;
+
+/* Give each link and the current item some padding to make them easy to click */
+a.page-numbers,
+span.page-numbers {
+	padding: .3em .7em;
+	color: #333;
+	color: hsl(0, 0%, 20%);
 }
+
+/* Link hover state */
+a:hover.page-numbers {
+	color: #000;
+	color: hsl(0, 0%, 0%);
+}
+
+/* Current page bold and dark */
+.paging-navigation .current {
+	font-weight: bold;
+	color: #000;
+	color: hsl(0, 0%, 0%);
+}
+
