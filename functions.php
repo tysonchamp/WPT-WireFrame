@@ -83,6 +83,13 @@ function my_theme_register_required_plugins() {
 		),
 		// This is an example of how to include a plugin from the WordPress Plugin Repository.
 		array(
+			'name'      => 'Nav Menu Roles',
+			'slug'      => 'nav-menu-roles',
+			'required'  => false,
+			'force_deactivation' => true,
+		),
+		// This is an example of how to include a plugin from the WordPress Plugin Repository.
+		array(
 			'name'      => 'Cyclone Slider 2',
 			'slug'      => 'cyclone-slider-2',
 			'required'  => false,
