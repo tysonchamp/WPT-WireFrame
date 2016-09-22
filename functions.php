@@ -76,6 +76,13 @@ function my_theme_register_required_plugins() {
 		
 		// This is an example of how to include a plugin from the WordPress Plugin Repository.
 		array(
+			'name'      => 'GTranslate',
+			'slug'      => 'gtranslate',
+			'required'  => false,
+			'force_deactivation' => true,
+		),
+		// This is an example of how to include a plugin from the WordPress Plugin Repository.
+		array(
 			'name'      => 'Fluid Responsive Slideshow',
 			'slug'      => 'fluid-responsive-slideshow',
 			'required'  => false,
