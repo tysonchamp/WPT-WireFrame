@@ -393,6 +393,14 @@ require_once dirname( __FILE__ ) . '/inc/customizer.php';
 require_once dirname( __FILE__ ) . '/inc/widgets.php';
 
 
+// Profile Extra Fields
+require_once dirname( __FILE__ ) . '/inc/profile_fields.php';
+
+
+// Featured Post
+require_once dirname( __FILE__ ) . '/inc/featured_post.php';
+
+
 // add custom post content
 /*
 function add_post_content($content) {
