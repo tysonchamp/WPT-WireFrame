@@ -82,6 +82,14 @@ function my_theme_register_required_plugins() {
 			'force_deactivation' => true,
 		),
 		// This is an example of how to include a plugin from the WordPress Plugin Repository.
+		// function to fetch the image $thumbnail_id =  z_taxonomy_image_url($term->term_id);
+		array(
+			'name'      => 'Categories Images',
+			'slug'      => 'categories-images',
+			'required'  => false,
+			'force_deactivation' => true,
+		),
+		// This is an example of how to include a plugin from the WordPress Plugin Repository.
 		array(
 			'name'      => 'Fluid Responsive Slideshow',
 			'slug'      => 'fluid-responsive-slideshow',
