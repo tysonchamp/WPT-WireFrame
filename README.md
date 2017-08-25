@@ -1,4 +1,4 @@
-# wp-functions.php
+# WPT-WireFrame
 
 This is my custom functions.php file to develop WP Themes.
 
