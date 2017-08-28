@@ -1,5 +1,20 @@
 <?php // WP Customize API
 
+// Add a widget in WordPress Dashboard
+function wpc_dashboard_widget_function() {
+	// Entering the text between the quotes
+	echo '<ul>
+	<li>WordPress Theme Framework: <a href="https://github.com/tysonchamp/WPT-WireFrame">WPT-WireFrame</a></li>
+	<li>Author: <a href="https://www.tysonchamp.com">Tyson</a></li>
+	<li>Theme Developer: <a href="https://www.rsboardtechnology.com">RS BOARD TECHNOLOGY</a></li>
+	<li>Theme Version: 0.1</li>
+	</ul>';
+}
+function wpc_add_dashboard_widgets() {
+	wp_add_dashboard_widget('wp_dashboard_widget', 'Theme information', 'wpc_dashboard_widget_function');
+}
+add_action('wp_dashboard_setup', 'wpc_add_dashboard_widgets' );
+
 /**
  * Add support for custom logo and also provide
  *
