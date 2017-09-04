@@ -5,6 +5,63 @@
 include_once('acf/acf.php');
 
 
+// Custom Post Type
+register_post_type( 'products',
+    array(
+        'labels' => array(
+            'name' => 'Products',
+            'singular_name' => 'Products',
+            'add_new' => 'Add New',
+            'add_new_item' => 'Add New Products',
+            'edit' => 'Edit',
+            'edit_item' => 'Edit Products',
+            'new_item' => 'New Products',
+            'view' => 'View',
+            'view_item' => 'View Products',
+            'search_items' => 'Search Products',
+            'not_found' => 'No Products',
+            'not_found_in_trash' => 'No Products found in Trash',
+            'parent_item_colon' => '',
+            'parent' => 'Parent Products'
+        ),
+
+        'description',
+        'public' => true,
+        'menu_position' => 5,
+        'hierarchical' => true,
+        'supports' => array( 'title', 'editor', 'thumbnail' ),
+        'show_in_admin_bar' => true,
+        'taxonomies' => array( '' ),
+        'has_archive' => true
+    )
+);
+
+	register_taxonomy('product_cat', 'products', array(
+	// Hierarchical taxonomy (like categories)
+	'hierarchical' => true,
+	// This array of options controls the labels displayed in the WordPress Admin UI
+	'labels' => array(
+		'name' => _x( 'Products Category', 'taxonomy general name' ),
+		'singular_name' => _x( 'Products Category', 'taxonomy singular name' ),
+		'search_items' =>  __( 'Search Products Category' ),
+		'all_items' => __( 'All Products Category' ),
+		'parent_item' => __( 'Parent Products Category' ),
+		'parent_item_colon' => __( 'Parent Products Category:' ),
+		'edit_item' => __( 'Edit Products Category' ),
+		'update_item' => __( 'Update Products Category' ),
+		'add_new_item' => __( 'Add New Products Category' ),
+		'new_item_name' => __( 'New Products Category' ),
+		'menu_name' => __( 'Products Category' ),
+	),
+	// Control the slugs used for this taxonomy
+	'rewrite' => array(
+		'slug' => 'product', // This controls the base slug that will display before each term
+		'with_front' => false, // Don't display the category base before "/locations/"
+		'hierarchical' => true // This will allow URL's like "/locations/boston/cambridge/"
+	),
+));
+
+
 /*
  * Enable support for Post Formats.
  *
