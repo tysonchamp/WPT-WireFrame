@@ -57,6 +57,21 @@
     </title>
     <?php } ?>
     
+    <?php 
+
+        if (isset($_POST['subscribe'])) {
+            $email = $_POST['subscribe_email'];
+
+            $status = 'pending'; // "subscribed" or "unsubscribed" or "cleaned" or "pending"
+            $list_id = get_field('list_id', 'option'); // where to get it read above
+            $api_key = get_field('api_key', 'option'); // where to get it read above
+            $merge_fields = array('FNAME' => ' ','LNAME' => ' ');
+             
+            rudr_mailchimp_subscriber_status($email, $status, $list_id, $api_key, $merge_fields );
+        }
+
+    ?>
+    
     <?php wp_head(); ?>
         <!-- FONT AWESOME -->
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
