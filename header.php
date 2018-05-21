@@ -5,22 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <?php
-    /*
-     * Print the <title> tag based on what is being viewed.
-     */
-    global $page, $paged;
-    
-    // if Plugin Activate
-        if ( ! function_exists('is_plugin_inactive')) {
-        require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
-        }
-    
-        if ( !is_plugin_inactive('wordpress-seo/wp-seo.php') ) {
-    
-    // if Force Rewrite is Active
-            $options = get_wpseo_options();
-            if ( isset( $options['forcerewritetitle'] ) && $options['forcerewritetitle'] ) {
-            }else{ ?>
+        /*
+         * Print the <title> tag based on what is being viewed.
+         */
+        global $page, $paged;
+    ?>
     <title>
         <?php wp_title( '' );
     
@@ -34,28 +23,8 @@
     
         // Add a page number if necessary:
         if ( $paged >= 2 || $page >= 2 )
-            echo ' | ' . sprintf( __( 'Page %s', 'twentyeleven' ), max( $paged, $page ) );  ?>
+            echo ' | ' . sprintf( __( 'Page %s', 'eventsmore' ), max( $paged, $page ) );  ?>
     </title>
-    
-    <?php }
-        }else{ ?>
-    <title>
-    <?php wp_title( '|', true, 'right' );
-    
-        // Add the blog name.
-        bloginfo( 'name' );
-    
-        // Add the blog description for the home/front page.
-        $site_description = get_bloginfo( 'description', 'display' );
-        if ( $site_description && ( is_home() || is_front_page() ) )
-            echo " | $site_description";
-    
-        // Add a page number if necessary:
-        if ( $paged >= 2 || $page >= 2 )
-            echo ' | ' . sprintf( __( 'Page %s', 'twentyeleven' ), max( $paged, $page ) );
-    ?>
-    </title>
-    <?php } ?>
     
     <?php 
 
