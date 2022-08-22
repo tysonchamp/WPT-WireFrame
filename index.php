@@ -13,96 +13,176 @@
  */
  
 get_header(); ?>
-
-    <section id="blog" class="container">
-        <div class="center">
-            <h2>Blog</h2>
-            <p class="lead">Welcome To My Blog</p>
-        </div>
-
-        <div class="blog">
+    
+    <!-- hs About Title Start -->
+    <div class="hs_indx_title_main_wrapper">
+        <div class="hs_title_img_overlay"></div>
+        <div class="container">
             <div class="row">
-                 <div class="col-md-8">
-                    <?php if ( have_posts() ) : ?>
-                     <?php // shape_content_nav( 'nav-above' ); ?>
-                     <?php /* Start the Loop */ ?>
-                     <?php while ( have_posts() ) : the_post(); ?>
-                 
-                          <?php
-                          /* Include the Post-Format-specific template for the content.
-                          * If you want to overload this in a child theme then include a file
-                          * called content-___.php (where ___ is the Post Format name) and    that will be used instead.
-                          */
-                          get_template_part( 'content', get_post_format() );
-                          ?>
-                     <?php endwhile; ?>
-                     <?php // shape_content_nav( 'nav-below' ); ?>
-                    <?php else : ?>
-                    <?php get_template_part( 'no-results', 'index' ); ?>
-                <?php endif; ?>
-                        
-                    <ul class="pagination pagination-lg">
-                    <?php
-                    if (function_exists("custom_paging_nav")) {
-                        custom_paging_nav();
-                    } ?>
-                    </ul>
-                </div><!--/.col-md-8-->
-
-                <aside class="col-md-4">
-                    <div class="widget search">
-                        <form role="form">
-                                <input type="text" class="form-control search_box" autocomplete="off" placeholder="Search Here">
-                        </form>
-                    </div><!--/.search-->
-                    
-                    <div class="widget categories">
-                        <h3>Recent Comments</h3>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 full_width">
+                    <div class="hs_indx_title_left_wrapper">
+                        <h2>Blog Categories</h2>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 full_width">
+                    <div class="hs_indx_title_right_wrapper">
+                        <ul>
+                            <li><a href="#">Home</a> &nbsp;&nbsp;&nbsp;> </li>
+                            <li>Blog Categories</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- hs About Title End -->
+    <!-- hs sidebar Start -->
+    <div class="hs_blog_categories_main_wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                    <div class="hs_blog_left_sidebar_main_wrapper">
                         <div class="row">
-                            <div class="col-sm-12">
-                             <?php
-                                $args = array(
-                                    'status' => 'approve',
-                                    'number' => '5',
-                                );
-                                $comments = get_comments($args);
-                                foreach( $comments as $comment ){
-                            ?>
-                                <div class="single_comments">
-                                    <?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
-                                    <p><?php echo $comment->comment_content; ?></p>
-                                    <div class="entry-meta small muted">
-                                        <span>By <a href="#"><?php echo $comment->comment_author; ?></a></span>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="hs_blog_box1_main_wrapper hs_blog_box2_main_wrapper">
+                                    <div class="hs_blog_box1_img_wrapper">
+                                        <img src="images/content/about_img.jpg" alt="blog_img" style="width: 100%;">
+                                        <div class="hs_blog_Indx_date_wrapper">
+                                            <ul>
+                                                <li>29</li>
+                                                <li>Oct</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="hs_blog_box1_cont_main_wrapper">
+                                        <div class="hs_blog_cont_heading_wrapper">
+                                            <h2>Rahu Enters Cancer and Ketu Enters Capricorn.</h2>
+                                            <h4><span></span></h4>
+                                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit sequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet the
+                                                mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.</p>
+                                            <h5><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></h5>
+                                        </div>
+                                    </div>
+                                    <div class="hs_blog_box1_bottom_cont_main_wrapper">
+                                        <div class="hs_blog_box1_bottom_cont_left">
+                                            <ul>
+                                                <li><a href="#">by - Admin</a></li>
+                                                <li><a href="#">In News - Horoscope</a></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                             <?php } ?>   
                             </div>
-                        </div>                     
-                    </div><!--/.recent comments-->
-                     
-
-                    <div class="widget categories">
-                        <h3>Categories</h3>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="hs_blog_box1_main_wrapper hs_blog_box2_main_wrapper">
+                                    <div class="hs_blog_box1_img_wrapper">
+                                        <img src="images/content/about_img.jpg" alt="blog_img" style="width: 100%;">
+                                        <div class="hs_blog_Indx_date_wrapper">
+                                            <ul>
+                                                <li>29</li>
+                                                <li>Oct</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="hs_blog_box1_cont_main_wrapper">
+                                        <div class="hs_blog_cont_heading_wrapper">
+                                            <h2>Rahu Enters Cancer and Ketu Enters Capricorn.</h2>
+                                            <h4><span></span></h4>
+                                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit sequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet the
+                                                mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.</p>
+                                            <h5><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></h5>
+                                        </div>
+                                    </div>
+                                    <div class="hs_blog_box1_bottom_cont_main_wrapper">
+                                        <div class="hs_blog_box1_bottom_cont_left">
+                                            <ul>
+                                                <li><a href="#">by - Admin</a></li>
+                                                <li><a href="#">In News - Horoscope</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 visible-lg visible-md">
+                                <div class="pager_wrapper">
+                                    <ul class="pagination">
+                                        <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                                        <li class="btc_shop_pagi"><a href="#">01</a></li>
+                                        <li class="btc_shop_pagi"><a href="#">02</a></li>
+                                        <li class="btc_third_pegi btc_shop_pagi"><a href="#">03</a></li>
+                                        <li class="hidden-xs btc_shop_pagi"><a href="#">04</a></li>
+                                        <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                    <div class="hs_blog_right_sidebar_main_wrapper">
                         <div class="row">
-                            <div class="col-sm-6">
-                                <ul class="blog_category">
-                                    <?php wp_list_categories('title_li'); ?>
-                                </ul>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="hs_blog_right_search_wrapper">
+                                    <input type="text" placeholder="Search">
+                                    <button type="submit"><i class="fa fa-search"></i></button>
+                                </div>
                             </div>
-                        </div>                     
-                    </div><!--/.categories-->
-                    
-                    <div class="widget tags">
-                        <h3>Tag Cloud</h3>
-                        <ul class="tag-cloud">
-                            <?php wp_tag_cloud( 'smallest=8&largest=8' ); ?>
-                        </ul>
-                    </div><!--/.tags-->
-                    
-                    <?php // get_sidebar(); ?>
-                </aside>  
-            </div><!--/.row-->
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="hs_blog_right_cate_list_heading_wrapper">
+                                    <h2>Blog CATEGORIES</h2>
+                                </div>
+                                <div class="hs_blog_right_cate_list_cont_wrapper">
+                                    <ul>
+                                        <li><a href="#">Horoscope News</a></li>
+                                        <li><a href="#">Astrology News</a></li>
+                                        <li><a href="#">Events</a></li>
+                                        <li><a href="#">News</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="hs_blog_right_cate_list_heading_wrapper">
+                                    <h2>Recent News</h2>
+                                </div>
+                                <div class="hs_blog_right_recnt_cont_wrapper">
+                                    <div class="hs_footer_ln_img_wrapper">
+                                        <img src="images/content/about_img.jpg" class="img-responsive" alt="ln_img" />
+                                    </div>
+                                    <div class="hs_footer_ln_cont_wrapper">
+                                        <h4>Astrolger Member in the life soltion.</h4>
+                                        <p>12 May 2022</p>
+                                    </div>
+                                </div>
+                                <div class="hs_blog_right_recnt_cont_wrapper">
+                                    <div class="hs_footer_ln_img_wrapper">
+                                        <img src="images/content/about_img.jpg" class="img-responsive" alt="ln_img" />
+                                    </div>
+                                    <div class="hs_footer_ln_cont_wrapper">
+                                        <h4>Astrolger Member in the life soltion.</h4>
+                                        <p>12 May 2022</p>
+                                    </div>
+                                </div>
+                            </div>
+                     
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 visible-sm visible-xs">
+                                <div class="pager_wrapper">
+                                    <ul class="pagination">
+                                        <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                                        <li class="btc_shop_pagi"><a href="#">01</a></li>
+                                        <li class="btc_shop_pagi"><a href="#">02</a></li>
+                                        <li class="btc_third_pegi btc_shop_pagi"><a href="#">03</a></li>
+                                        <li class="hidden-xs btc_shop_pagi"><a href="#">04</a></li>
+                                        <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section><!--/#blog-->
-
+    </div>
+    <!-- hs sidebar End -->
+ 
 <?php get_footer(); ?>

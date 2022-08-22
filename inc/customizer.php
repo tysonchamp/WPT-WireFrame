@@ -4,10 +4,10 @@
 function wpc_dashboard_widget_function() {
 	// Entering the text between the quotes
 	echo '<ul>
-	<li>WordPress Theme Framework: <a href="https://github.com/tysonchamp/WPT-WireFrame">WPT-WireFrame</a></li>
-	<li>Author: <a href="https://www.tysonchamp.com">Tyson</a></li>
-	<li>Theme Developer: <a href="https://www.rsboardtechnology.com">RS BOARD TECHNOLOGY</a></li>
-	<li>Theme Version: 0.1</li>
+	   <li>WordPress Theme Framework: <a href="https://github.com/tysonchamp/WPT-WireFrame">WPT-WireFrame</a></li>
+	   <li>Author: <a href="https://www.tysonchamp.com">Tyson</a></li>
+	   <li>Theme Developer: <a href="https://www.gbyteinfotech.com">GBYTE INFOTECH</a></li>
+	   <li>Theme Version: 0.1</li>
 	</ul>';
 }
 function wpc_add_dashboard_widgets() {
@@ -47,13 +47,12 @@ endif;
 function my_login_logo() { ?>
     <style type="text/css">
         #login h1 a, .login h1 a {
-            background-image: url(<?php echo get_template_directory_uri(); ?>/imgs/as.png);
+            background-image: url(<?php echo get_template_directory_uri(); ?>/images/header/logo.png);
             padding-bottom: 30px;
         }
     </style>
 <?php }
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
-
 
 /**
  *
@@ -74,7 +73,6 @@ function theme_site_icon_tag( $meta_tags ) {
 }
 add_filter( 'site_icon_meta_tags', 'theme_site_icon_tag' );
 
-
 /**
  * Setup the WordPress core custom background feature.
  *
@@ -89,7 +87,7 @@ add_filter( 'site_icon_meta_tags', 'theme_site_icon_tag' );
 function theme_custom_background() {
     $defaults = array(
 		'default-color'          => '',
-		'default-image'          => get_template_directory_uri() . '/images/background/page-title-bg-1.jpg',
+		'default-image'          => '',
 		'default-repeat'         => '',
 		'default-position-x'     => '',
 		'default-attachment'     => '',

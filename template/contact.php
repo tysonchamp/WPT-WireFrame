@@ -1,18 +1,12 @@
 <?php
-/**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages and that
- * other 'pages' on your WordPress site will use a different template.
- *
- * @package WordPress
- * @subpackage clean blog
- * 
+/*
+ *Template Name: Contact Us
  */
+GLOBAL $post;
+get_header('inner');
 
-global $post;
-get_header('inner'); ?>
+?>
+
     <?php $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' ); ?>
     
     <!-- hs About Title Start -->
@@ -22,14 +16,14 @@ get_header('inner'); ?>
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 full_width">
                     <div class="hs_indx_title_left_wrapper">
-                        <h2>About Us</h2>
+                        <h2>Contact Us</h2>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 full_width">
                     <div class="hs_indx_title_right_wrapper">
                         <ul>
                             <li><a href="#">Home</a> &nbsp;&nbsp;&nbsp;> </li>
-                            <li>About Us</li>
+                            <li>Contact Us</li>
                         </ul>
                     </div>
                 </div>
@@ -37,77 +31,112 @@ get_header('inner'); ?>
         </div>
     </div>
     <!-- hs About Title End -->
-    <!-- hs about ind wrapper Start -->
-    <div class="hs_about_indx_main_wrapper hs_about_indx_inner_main_wrapper">
+    <!-- hs contact us Title Start -->
+    <div class="hs_contact_tittle_main_wrapper">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="hs_about_right_cont_wrapper">
-                        <h2>HoroScope Revels The Will Of God</h2>
-                        <p>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue.Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue.Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue.Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue.Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue.</p>
-                        <p>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue.</p>
+                    <div class="hs_about_heading_main_wrapper">
+                        <div class="hs_about_heading_wrapper">
+                            <h2>Need Help <span>Contact Us</span></h2>
+                            <h4><span></span></h4>
+                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum<br> auctor, nisi elit consequat hello Aenean world.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="hs_contact_title_box_wrapper">
+                        <i class="fa fa-phone"></i>
+                        <p>+8100-123-13312<br>+1123-123-44565</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="hs_contact_title_box_wrapper">
+                        <i class="fa fa-envelope"></i>
+                        <p>+8100-123-13312<br>+1123-123-44565</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="hs_contact_title_box_wrapper">
+                        <i class="fa fa-map-marker"></i>
+                        <p>+8100-123-13312<br>+1123-123-44565</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- hs about ind wrapper End -->
-    <!-- hs advert wrapper Start -->
-    <div class="hs_advert_main_wrapper">
-        <div class="hs_advert_img_overlay"></div>
+    <!-- hs contact us Title End -->
+    <!-- hs contact form Start -->
+    <div class="hs_contact_indx_form_main_wrapper">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 25px;">
-                    <div class="hs_advert_cont_wrapper">
-                        <h1>WHY CHOOSE<br> BEST AUTROLOGY SERVICE IN KOLKATA</h1>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="hs_about_heading_main_wrapper">
+                        <div class="hs_about_heading_wrapper">
+                            <h2>Fill Free <span>Enquiry Form</span></h2>
+                            <h4><span></span></h4>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-12">
-                    <div class="hs_counter_cont_wrapper hs_counter_cont_wrapper1">
-                        <div class="count-description">
-                            <div class="hs_main_cycle_main">
-                                <span class="timer">25</span>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <form>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="hs_kd_six_sec_input_wrapper">
+                                    <label>Name</label>
+                                    <input type="text" class="require" name="first_name">
+                                </div>
                             </div>
-                            <h5 class="con1">Astrology <br>Prediction Expert</h5>
-                        </div>
-                    </div>
-                    <div class="hs_counter_cont_wrapper hs_counter_cont_wrapper1">
-                        <div class="count-description">
-                            <div class="hs_main_cycle_main">
-                                <span class="timer">25</span>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="hs_kd_six_sec_input_wrapper">
+                                    <label>Email</label>
+                                    <input type="text" class="require" name="first_name">
+                                </div>
                             </div>
-                            <h5 class="con1">Worldwide <br>Access</h5>
-                        </div>
-                    </div>
-                    <div class="hs_counter_cont_wrapper hs_counter_cont_wrapper1">
-                        <div class="count-description">
-                            <div class="hs_main_cycle_main">
-                                <span class="timer">365</span>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="hs_kd_six_sec_input_wrapper">
+                                    <label>Subject</label>
+                                    <input type="text" class="require" name="first_name">
+                                </div>
                             </div>
-                            <h5 class="con1">Days<br> Availability</h5>
-                        </div>
-                    </div>
-                    <div class="hs_counter_cont_wrapper hs_counter_cont_wrapper1">
-                        <div class="count-description">
-                            <div class="hs_main_cycle_main">
-                                <span class="timer">25</span>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="hs_kd_six_sec_input_wrapper">
+                                    <label>Phone Number</label>
+                                    <input type="email" class="require" name="email" data-valid="email" data-error="Email should be valid.">
+                                </div>
                             </div>
-                            <h5 class="con1">Happy <br> Clients</h5>
-                        </div>
-                    </div>
-                    <div class="hs_counter_cont_wrapper hs_counter_cont_wrapper1">
-                        <div class="count-description">
-                            <div class="hs_main_cycle_main">
-                                <span class="timer">25</span>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="hs_kd_six_sec_input_wrapper">
+                                    <label>Message</label>
+                                    <textarea rows="6" class="require" name="message"></textarea>
+                                </div>
                             </div>
-                            <h5 class="con1">Trusted <br>By Thousand Clients</h5>
-                        </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="response"></div>
+                                <div class="hs_contact_indx_form_btn">
+                                    <ul>
+                                        <li>
+                                            <input type="hidden" name="form_type" value="contact">
+                                            <button type="button" class="hs_btn_hover submitForm">Send a Message</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- hs advert wrapper End -->
+    <!-- hs contact form End -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <iframe scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=100%&amp;height=400&amp;hl=en&amp;q=Puratan%20Ramgarh,%20Vii%20Kapat%20Khand%20Keyat%20Khanda,%20South%2024%20Parganas,%20Puratan,%20West%20Bengal%20743504%20+(Tantrik%20Sree%20Sibnath)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="100%" height="400" frameborder="0"></iframe> <a href='https://addmap.net/'>adding a google map to your website</a>
+                <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=5524f5d7db51243948d3d120b169c342677ba904'></script>
+            </div>
+        </div>
+    </div>
     <!-- hs client slider wrapper Start -->
     <div class="hs_client_slider_main_wrapper">
         <div class="container">
