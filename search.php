@@ -26,97 +26,176 @@ get_header(); ?>
             </div>
         </div>
     </section>
-    <section class="ftco-section">
+    
+    <!-- hs About Title Start -->
+    <div class="hs_indx_title_main_wrapper">
+        <div class="hs_title_img_overlay"></div>
         <div class="container">
-            <div class="row d-flex">
-
-                <?php if(have_posts()): ?>
-                    <?php while(have_posts()): the_post(); ?>
-                        <?php $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' ); ?>
-                        <div class="col-md-4 d-flex ftco-animate">
-                            <div class="blog-entry align-self-stretch">
-                                <a href="<?php the_permalink(); ?>" class="block-20 rounded" style="background-image: url('<?php echo $featured_image[0]; ?>');">
-                                </a>
-                                <div class="text p-4">
-                                    <div class="meta mb-2">
-                                        <div><a href="<?php the_permalink(); ?>"><?php the_time( $d = 'j m, Y' ) ?></a></div>
-                                        <div><?php echo the_author_link(); ?></div>
-                                        <div><a href="<?php the_permalink(); ?>" class="meta-chat"><span class="fa fa-comment"></span> <?php echo comments_number( $zero = false, $one = false, $more = false, $deprecated = '' ) ?></a></div>
-                                    </div>
-                                    <h3 class="heading"><a href="<?php the_permalink(); ?>"><?php the_title( $before = '', $after = '', $echo = true ) ?></a></h3>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endwhile; ?>
-                <?php endif; ?>
-
-            </div>
-            <!-- <div class="row mt-5">
-                <div class="col text-center">
-                    <div class="block-27">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 full_width">
+                    <div class="hs_indx_title_left_wrapper">
+                        <h2><?php echo get_search_query(); ?></h2>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 full_width">
+                    <div class="hs_indx_title_right_wrapper">
                         <ul>
-                            <li><a href="#">&lt;</a></li>
-                            <li class="active"><span>1</span></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">&gt;</a></li>
+                            <li><a href="<?php echo site_url( $path = '', $scheme = null ) ?>">Home</a> &nbsp;&nbsp;&nbsp;> &nbsp;&nbsp;&nbsp;</li>
+                            <li><a href="<?php echo site_url( $path = 'blog', $scheme = null ) ?>">Blog</a> &nbsp;&nbsp;&nbsp;> </li>
+                            <li><?php echo get_search_query(); ?></li>
                         </ul>
                     </div>
                 </div>
-            </div> -->
-        </div>
-    </section>
-    <!--Testimonials start-->
-    <section class="ftco-section testimony-section bg-light">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row justify-content-center pb-5 mb-3">
-                <div class="col-md-7 heading-section heading-section-white text-center ftco-animate">
-                    <span class="subheading">Testimonies</span>
-                    <h2>Happy Clients &amp; Feedbacks</h2>
-                </div>
             </div>
-            <div class="row ftco-animate">
-                <div class="col-md-12">
-                    <div class="carousel-testimony owl-carousel ftco-owl">
-                        
-                        <?php if(have_rows('all_feedbacks', 'option')): ?>
-                            <?php while(have_rows('all_feedbacks', 'option')): the_row(); ?>
-                                <div class="item">
-                                    <div class="testimony-wrap py-4">
-                                        <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
-                                        <div class="text">
-                                            <p class="mb-4"><?php echo get_sub_field('feedback_texts'); ?></p>
-                                            <div class="d-flex align-items-center">
-                                                <div class="user-img" style="background-image: url(<?php echo get_sub_field('person_image'); ?>)"></div>
-                                                <div class="pl-3">
-                                                    <p class="name"><?php echo get_sub_field('person_name'); ?></p>
-                                                    <span class="position"><?php echo get_sub_field('person_designation'); ?></span>
+        </div>
+    </div>
+    <!-- hs About Title End -->
+    <!-- hs sidebar Start -->
+    <div class="hs_blog_categories_main_wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                    <div class="hs_blog_left_sidebar_main_wrapper">
+                        <div class="row">
+
+                            <?php if(have_posts()): ?>
+                                <?php while(have_posts()): the_post(); ?>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="hs_blog_box1_main_wrapper hs_blog_box2_main_wrapper">
+                                            <div class="hs_blog_box1_img_wrapper">
+                                                <?php if(has_post_thumbnail()): ?>
+                                                    <?php $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' ); ?>
+                                                    <img src="<?php echo $featured_image[0]; ?>" alt="blog_img" style="width: 100%;">
+                                                <?php endif; ?>
+                                                <div class="hs_blog_Indx_date_wrapper">
+                                                    <ul>
+                                                        <li><?php the_time( $d = 'd' ) ?></li>
+                                                        <li><?php the_time( $d = 'M' ) ?></li>
+                                                    </ul>
                                                 </div>
                                             </div>
+                                            <div class="hs_blog_box1_cont_main_wrapper">
+                                                <div class="hs_blog_cont_heading_wrapper">
+                                                    <h2><?php the_title( $before = '', $after = '', $echo = true ) ?></h2>
+                                                    <h4><span></span></h4>
+                                                    <?php the_excerpt(); ?>
+                                                    <h5><a href="<?php the_permalink() ?>">Read More <i class="fa fa-long-arrow-right"></i></a></h5>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="hs_blog_box1_bottom_cont_main_wrapper">
+                                                <div class="hs_blog_box1_bottom_cont_left">
+                                                    <ul>
+                                                        <li><a href="#">by - Admin</a></li>
+                                                        <li><a href="#">In News - Horoscope</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div> -->
                                         </div>
                                     </div>
-                                </div>
-                            <?php endwhile; ?>
-                        <?php endif; ?>
+                                <?php endwhile; ?>
+                            <?php else: ?>
+                            <?php endif; ?>
 
+                            <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 visible-lg visible-md">
+                                <div class="pager_wrapper">
+                                    <ul class="pagination">
+                                        <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                                        <li class="btc_shop_pagi"><a href="#">01</a></li>
+                                        <li class="btc_shop_pagi"><a href="#">02</a></li>
+                                        <li class="btc_third_pegi btc_shop_pagi"><a href="#">03</a></li>
+                                        <li class="hidden-xs btc_shop_pagi"><a href="#">04</a></li>
+                                        <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                    <div class="hs_blog_right_sidebar_main_wrapper">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="hs_blog_right_search_wrapper">
+                                    <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
+                                        <input type="text" name="s" value="<?php echo esc_attr( get_search_query() ); ?>" id="s" placeholder="<?php esc_attr_e( 'Search &hellip;', 'shape' ); ?>">
+                                        <button type="submit"><i class="fa fa-search"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="hs_blog_right_cate_list_heading_wrapper">
+                                    <h2>Blog CATEGORIES</h2>
+                                </div>
+                                <div class="hs_blog_right_cate_list_cont_wrapper">
+                                    <ul>
+                                        <?php
+                                            $categories = get_categories( array(
+                                                'hide_empty'    => true,
+                                                'orderby'       => 'name',
+                                                'order'         => 'ASC'
+                                            ) );
+                                        ?>
+                                        <?php foreach( $categories as $category ) { ?>
+                                            <li><a href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>"><?php echo $category->name ?></a></li>
+                                        <?php } ?>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="hs_blog_right_cate_list_heading_wrapper">
+                                    <h2>Recent News</h2>
+                                </div>
+                                <?php
+                                    $args = array(
+                                        // Choose ^ 'any' or from below, since 'any' cannot be in an array
+                                        'post_type' => array(
+                                            'post',
+                                        ),
+                                
+                                        'post_status' => array(
+                                            'publish',
+                                        ),
+                                
+                                        // Pagination Parameters
+                                        'posts_per_page'         => 3,
+                                        'posts_per_archive_page' => 3,
+                                    );
+                                    $query = new WP_Query( $args );
+                                ?>
+                                <?php if($query->have_posts()): ?>
+                                    <?php while($query->have_posts()): $query->the_post(); ?>
+                                        <div class="hs_blog_right_recnt_cont_wrapper">
+                                            <div class="hs_footer_ln_img_wrapper">
+                                                <?php $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' ); ?>
+                                                <img src="<?php echo $featured_image[0] ?>" class="img-responsive" alt="ln_img" />
+                                            </div>
+                                            <div class="hs_footer_ln_cont_wrapper">
+                                                <a href="<?php the_permalink(); ?>"><h4><?php the_title( $before = '', $after = '', $echo = true ) ?></h4></a>
+                                                <p><?php the_time('M j, Y') ?></p>
+                                            </div>
+                                        </div>
+                                    <?php endwhile; ?>
+                                <?php endif; ?>
+                            </div>
+                     
+                            <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 visible-sm visible-xs">
+                                <div class="pager_wrapper">
+                                    <ul class="pagination">
+                                        <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                                        <li class="btc_shop_pagi"><a href="#">01</a></li>
+                                        <li class="btc_shop_pagi"><a href="#">02</a></li>
+                                        <li class="btc_third_pegi btc_shop_pagi"><a href="#">03</a></li>
+                                        <li class="hidden-xs btc_shop_pagi"><a href="#">04</a></li>
+                                        <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!--Testimonials end-->
-    <!--Google Map-->
-    <section class="googlemap">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12 p-0 m-0">
-                    <?php echo get_field('footer_google_map','option'); ?>
-                </div>
-            </div>
-        </div>
-    </section>
-    
+    </div>
+    <!-- hs sidebar End -->
+ 
 <?php get_footer(); ?>
