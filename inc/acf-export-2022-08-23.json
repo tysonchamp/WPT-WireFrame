@@ -1,0 +1,1079 @@
+[
+    {
+        "key": "group_6303f3ab9c7a3",
+        "title": "Contact Us",
+        "fields": [
+            {
+                "key": "field_6303f3c208ab3",
+                "label": "Google Map",
+                "name": "google_map",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "<iframe scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" id=\"gmap_canvas\" src=\"https:\/\/maps.google.com\/maps?width=100%&amp;height=400&amp;hl=en&amp;q=Puratan%20Ramgarh,%20Vii%20Kapat%20Khand%20Keyat%20Khanda,%20South%2024%20Parganas,%20Puratan,%20West%20Bengal%20743504%20+(Tantrik%20Sree%20Sibnath)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed\" width=\"100%\" height=\"400\" frameborder=\"0\"><\/iframe>",
+                "placeholder": "",
+                "maxlength": "",
+                "rows": "",
+                "new_lines": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "template\/contact.php"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_6304ab5fae9ab",
+        "title": "Home Page",
+        "fields": [
+            {
+                "key": "field_6304afed1125a",
+                "label": "Quick Info",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0
+            },
+            {
+                "key": "field_6304b0061125b",
+                "label": "Quick Info Title",
+                "name": "quick_info_title",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Astrologer Tantrik Sree Sibnath",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_6304b01b1125c",
+                "label": "Quick Info Texts",
+                "name": "quick_info_texts",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Most Popular, Trustful & Experienced Astrologer Contact For Solution +91-98007 13636",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_6304afbda7b51",
+                "label": "About Section",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "left",
+                "endpoint": 0
+            },
+            {
+                "key": "field_6304afcaa7b52",
+                "label": "About Title",
+                "name": "about_title",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "About <span>Austrology Service in Kolkata<\/span>",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_6304afd8a7b53",
+                "label": "About Descriptions",
+                "name": "about_descriptions",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "<h2>HoroScope Revels The Will Of God<\/h2>\r\n                        <p>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu\r\n                            ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue.<\/p>\r\n                        <h3>Contact Us<\/h3>",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_type",
+                    "operator": "==",
+                    "value": "front_page"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_63047871f1d51",
+        "title": "Service Texts",
+        "fields": [
+            {
+                "key": "field_630478ab40e91",
+                "label": "All Texts",
+                "name": "all_texts_service",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "block",
+                "button_label": "",
+                "sub_fields": [
+                    {
+                        "key": "field_630478b540e92",
+                        "label": "Title",
+                        "name": "title_service",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "Tips for Vastu For Daily Life",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_630478cd40e93",
+                        "label": "Descriptions",
+                        "name": "descriptions_service",
+                        "type": "wysiwyg",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "<p>You’ve been to therapies, joined support groups, cried in front of your best friend but nothing worked. Perhaps, the problem is not with you or your partner. According to us (and we say it with a lot of experience)\r\n                                        there are forces of nature that start working against people if they start differing from the natural laws of nature. If your relationship with your spouse is losig spark then here are a few effective Vastu shastra\r\n                                        tips to renew your love.<\/p>",
+                        "tabs": "all",
+                        "toolbar": "full",
+                        "media_upload": 1,
+                        "delay": 0
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "template\/services.php"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_6303f4ddbd873",
+        "title": "Services Section",
+        "fields": [
+            {
+                "key": "field_6303f5246a26d",
+                "label": "All Services",
+                "name": "all_services",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "block",
+                "button_label": "",
+                "sub_fields": [
+                    {
+                        "key": "field_6303f52f6a26e",
+                        "label": "Service Image",
+                        "name": "service_image",
+                        "type": "image",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "url",
+                        "preview_size": "medium",
+                        "library": "all",
+                        "min_width": "",
+                        "min_height": "",
+                        "min_size": "",
+                        "max_width": "",
+                        "max_height": "",
+                        "max_size": "",
+                        "mime_types": ""
+                    },
+                    {
+                        "key": "field_6303f53e6a26f",
+                        "label": "Service Title",
+                        "name": "service_title",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "RELATIONSHIP PROBLEM SOLUTION",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_6303f55f6a270",
+                        "label": "Service Short Texts",
+                        "name": "service_short_texts",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "Proin gravida nibh vel velit auctor aliquet. Aenean",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_6303f5716a271",
+                        "label": "Service Url",
+                        "name": "service_url",
+                        "type": "page_link",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "post_type": [
+                            "page"
+                        ],
+                        "taxonomy": "",
+                        "allow_null": 0,
+                        "allow_archives": 1,
+                        "multiple": 0
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "feedbacks-service"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_6303f937bc3ba",
+        "title": "Testimonials",
+        "fields": [
+            {
+                "key": "field_6303f95186101",
+                "label": "All Feedbacks",
+                "name": "all_feedbacks",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "block",
+                "button_label": "",
+                "sub_fields": [
+                    {
+                        "key": "field_6304ab9fa4af1",
+                        "label": "Feedback1",
+                        "name": "",
+                        "type": "tab",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "placement": "top",
+                        "endpoint": 0
+                    },
+                    {
+                        "key": "field_6303f96086102",
+                        "label": "Feedback Texts",
+                        "name": "feedback_texts",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.",
+                        "placeholder": "",
+                        "maxlength": "",
+                        "rows": "",
+                        "new_lines": ""
+                    },
+                    {
+                        "key": "field_6303f99586103",
+                        "label": "Customer Name",
+                        "name": "customer_name",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "Joan doe",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_6303f9a586104",
+                        "label": "Designation",
+                        "name": "designation",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "Designer",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_6304ababa4af2",
+                        "label": "Feedback2",
+                        "name": "",
+                        "type": "tab",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "placement": "top",
+                        "endpoint": 0
+                    },
+                    {
+                        "key": "field_6304abd3a4af3",
+                        "label": "Feedback texts",
+                        "name": "feedback_texts2",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.",
+                        "placeholder": "",
+                        "maxlength": "",
+                        "rows": "",
+                        "new_lines": ""
+                    },
+                    {
+                        "key": "field_6304abeaa4af4",
+                        "label": "Customer Name",
+                        "name": "customer_name2",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "Customer Name",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_6304abfaa4af5",
+                        "label": "Designation",
+                        "name": "designation2",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "Designation",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "feedbacks-options"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_6303f0ac0ba88",
+        "title": "Theme Options",
+        "fields": [
+            {
+                "key": "field_6303f24dc7961",
+                "label": "Header",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "left",
+                "endpoint": 0
+            },
+            {
+                "key": "field_6303f259c7962",
+                "label": "Header Image",
+                "name": "header_image",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url",
+                "preview_size": "medium",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_6303f265c7963",
+                "label": "Footer",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0
+            },
+            {
+                "key": "field_6303f26dc7964",
+                "label": "Footer Texts",
+                "name": "footer_texts",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Donec id elit non mi porta gravida at eget metus. Donec id elit non Vestibulum id ligula porta felis euism od semper. Nulla vitae elit libero",
+                "placeholder": "",
+                "maxlength": "",
+                "rows": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_6303f27cc7965",
+                "label": "Chamber Details",
+                "name": "chamber_details",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Kalighat, Dumdum, Barasat, Tarapith, Tarakeswar, Asansol, Siliguri, Malda, Diamond harbour.",
+                "placeholder": "",
+                "maxlength": "",
+                "rows": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_6303f2a8c7967",
+                "label": "Contact Details",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0
+            },
+            {
+                "key": "field_6303f2b5c7968",
+                "label": "Phone No1",
+                "name": "phone_no1",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "666 777 888",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_6303f2c3c7969",
+                "label": "Phone No 2",
+                "name": "phone_no_2",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "111 222 333",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_6303fba590c85",
+                "label": "Whatsapp No",
+                "name": "whatsapp_no",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "+919800713636",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_6303f2cfc796a",
+                "label": "Email Address",
+                "name": "email_address",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "mondalsanu143@gmail.com",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_6303f2dec796b",
+                "label": "Address",
+                "name": "address",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Visit Us 123 Fake Street- London 12358 United Kingdom",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_6303f2fbe6324",
+                "label": "Social Icons",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0
+            },
+            {
+                "key": "field_6303f308e6325",
+                "label": "Social Profiles",
+                "name": "social_profiles",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "",
+                "sub_fields": [
+                    {
+                        "key": "field_6303f314e6326",
+                        "label": "Social Icon",
+                        "name": "social_icon",
+                        "type": "font-awesome",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "icon_sets": [
+                            "all"
+                        ],
+                        "custom_icon_set": "",
+                        "default_label": "",
+                        "default_value": "",
+                        "save_format": "class",
+                        "allow_null": 0,
+                        "show_preview": 1,
+                        "enqueue_fa": 0,
+                        "fa_live_preview": "",
+                        "choices": []
+                    },
+                    {
+                        "key": "field_6303f322e6327",
+                        "label": "Social Url",
+                        "name": "social_url",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "#",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "theme-options"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_6304b0b4bc669",
+        "title": "Theme Sliders",
+        "fields": [
+            {
+                "key": "field_6304b0c32c603",
+                "label": "Slider Images",
+                "name": "slider_images",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "",
+                "sub_fields": [
+                    {
+                        "key": "field_6304b0d42c604",
+                        "label": "Select a Image",
+                        "name": "select_a_image",
+                        "type": "image",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "url",
+                        "preview_size": "full",
+                        "library": "all",
+                        "min_width": "",
+                        "min_height": "",
+                        "min_size": "",
+                        "max_width": "",
+                        "max_height": "",
+                        "max_size": "",
+                        "mime_types": ""
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "slider-options"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_6303f6a2dfdbd",
+        "title": "Why Choose Section",
+        "fields": [
+            {
+                "key": "field_6303f7c900765",
+                "label": "Why choose Us Title",
+                "name": "why_choose_us_title",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "WHY CHOOSE<br> BEST AUTROLOGY SERVICE IN KOLKATA",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_6303fa69384d5",
+                "label": "Why Choose Texts",
+                "name": "why_choose_texts",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "<p><i class=\"fa fa-check\" aria-hidden=\"true\"><\/i> If you are interested in learning about the future, it is better to contact our Astrology specialist who will tell you everything about the future.<br> <i class=\"fa fa-check\" aria-hidden=\"true\"><\/i> We have access around the world, which is really easily accessible to anyone who needs to solve their problem.<br><i class=\"fa fa-check\" aria-hidden=\"true\"><\/i> We provide our 365 days availability to everyone who is near or far from us and to solve their problems.<br><i class=\"fa fa-check\" aria-hidden=\"true\"><\/i> Our services always make our customers happy by solving their problems and again make their life better for them.<br><i class=\"fa fa-check\" aria-hidden=\"true\"><\/i> Thousands of customers trust us only thanks to our services, which are very affordable and effective for everyone.<\/p>",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            },
+            {
+                "key": "field_6303f6da2c5d4",
+                "label": "Why Choose Us",
+                "name": "why_choose_us",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "",
+                "sub_fields": [
+                    {
+                        "key": "field_6303f70d2c5d5",
+                        "label": "Number",
+                        "name": "number",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": 25,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_6303f7a82c5d6",
+                        "label": "Texts",
+                        "name": "reason_texts",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "Astrology <br>Prediction Expert",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "default"
+                }
+            ],
+            [
+                {
+                    "param": "page_type",
+                    "operator": "==",
+                    "value": "front_page"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    }
+]

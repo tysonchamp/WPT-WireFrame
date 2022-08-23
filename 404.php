@@ -21,14 +21,14 @@ get_header(); ?>
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 full_width">
                     <div class="hs_indx_title_left_wrapper">
-                        <h2>Blog Single</h2>
+                        <h2>404 - Not Found</h2>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 full_width">
                     <div class="hs_indx_title_right_wrapper">
                         <ul>
-                            <li><a href="#">Home</a> &nbsp;&nbsp;&nbsp;> </li>
-                            <li>Blog Single</li>
+                            <li><a href="<?php echo site_url( $path = '', $scheme = null ) ?>">Home</a> &nbsp;&nbsp;&nbsp;> </li>
+                            <li>404 - Not Found</li>
                         </ul>
                     </div>
                 </div>

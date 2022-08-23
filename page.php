@@ -22,14 +22,14 @@ get_header('inner'); ?>
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 full_width">
                     <div class="hs_indx_title_left_wrapper">
-                        <h2>About Us</h2>
+                        <h2><?php the_title( $before = '', $after = '', $echo = true ) ?></h2>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 full_width">
                     <div class="hs_indx_title_right_wrapper">
                         <ul>
-                            <li><a href="#">Home</a> &nbsp;&nbsp;&nbsp;> </li>
-                            <li>About Us</li>
+                            <li><a href="<?php echo site_url( $path = '', $scheme = null ) ?>">Home</a> &nbsp;&nbsp;&nbsp;> </li>
+                            <li><?php the_title( $before = '', $after = '', $echo = true ) ?></li>
                         </ul>
                     </div>
                 </div>
@@ -43,9 +43,7 @@ get_header('inner'); ?>
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="hs_about_right_cont_wrapper">
-                        <h2>HoroScope Revels The Will Of God</h2>
-                        <p>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue.Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue.Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue.Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue.Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue.</p>
-                        <p>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue.</p>
+                        <?php echo apply_filters('the_content', $post->post_content); ?>
                     </div>
                 </div>
             </div>
@@ -59,138 +57,69 @@ get_header('inner'); ?>
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 25px;">
                     <div class="hs_advert_cont_wrapper">
-                        <h1>WHY CHOOSE<br> BEST AUTROLOGY SERVICE IN KOLKATA</h1>
+                        <h1><?php echo get_field('why_choose_us_title'); ?></h1>
                     </div>
                 </div>
                 <div class="col-lg-12">
-                    <div class="hs_counter_cont_wrapper hs_counter_cont_wrapper1">
-                        <div class="count-description">
-                            <div class="hs_main_cycle_main">
-                                <span class="timer">25</span>
+
+                    <?php if(have_rows('why_choose_us')): ?>
+                        <?php while(have_rows('why_choose_us')): the_row(); ?>
+                            <div class="hs_counter_cont_wrapper hs_counter_cont_wrapper1">
+                                <div class="count-description">
+                                    <div class="hs_main_cycle_main">
+                                        <span class="timer"><?php echo get_sub_field('number'); ?></span>
+                                    </div>
+                                    <h5 class="con1"><?php echo get_sub_field('reason_texts'); ?></h5>
+                                </div>
                             </div>
-                            <h5 class="con1">Astrology <br>Prediction Expert</h5>
-                        </div>
-                    </div>
-                    <div class="hs_counter_cont_wrapper hs_counter_cont_wrapper1">
-                        <div class="count-description">
-                            <div class="hs_main_cycle_main">
-                                <span class="timer">25</span>
-                            </div>
-                            <h5 class="con1">Worldwide <br>Access</h5>
-                        </div>
-                    </div>
-                    <div class="hs_counter_cont_wrapper hs_counter_cont_wrapper1">
-                        <div class="count-description">
-                            <div class="hs_main_cycle_main">
-                                <span class="timer">365</span>
-                            </div>
-                            <h5 class="con1">Days<br> Availability</h5>
-                        </div>
-                    </div>
-                    <div class="hs_counter_cont_wrapper hs_counter_cont_wrapper1">
-                        <div class="count-description">
-                            <div class="hs_main_cycle_main">
-                                <span class="timer">25</span>
-                            </div>
-                            <h5 class="con1">Happy <br> Clients</h5>
-                        </div>
-                    </div>
-                    <div class="hs_counter_cont_wrapper hs_counter_cont_wrapper1">
-                        <div class="count-description">
-                            <div class="hs_main_cycle_main">
-                                <span class="timer">25</span>
-                            </div>
-                            <h5 class="con1">Trusted <br>By Thousand Clients</h5>
-                        </div>
-                    </div>
+                        <?php endwhile; ?>
+                    <?php endif; ?>
+
                 </div>
             </div>
         </div>
     </div>
     <!-- hs advert wrapper End -->
-    <!-- hs client slider wrapper Start -->
-    <div class="hs_client_slider_main_wrapper">
-        <div class="container">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="hs_about_heading_main_wrapper">
-                    <div class="hs_about_heading_wrapper">
-                        <h2>Our <span> services</span></h2>
-                        <h4><span></span></h4>
-                        <p style="margin-bottom: 80px;">Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum<br> auctor, nisi elit consequat hello Aenean world.</p>
+    
+    <?php if(have_rows('all_services','option')): ?>
+        <!-- hs client slider wrapper Start -->
+        <div class="hs_client_slider_main_wrapper">
+            <div class="container">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="hs_about_heading_main_wrapper">
+                        <div class="hs_about_heading_wrapper">
+                            <h2>Our <span> services</span></h2>
+                            <h4><span></span></h4>
+                            <!-- <p style="margin-bottom: 80px;">Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum<br> auctor, nisi elit consequat hello Aenean world.</p> -->
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="hs_client_slider_wrapper">
-                    <div class="owl-carousel owl-theme">
-                        <div class="item">
-                            <div class="hs_client_img_wrapper">
-                                <div class="hs_service_main_box_wrapper">
-                                    <div class="hs_service_icon_main_wrapper">
-                                        <div class="hs_service_icon_wrapper">
-                                            <img src="images/content/2.jpg" style="width: 100%; border-radius: 100%;">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="hs_client_slider_wrapper">
+                        <div class="owl-carousel owl-theme">
+                            <?php while(have_rows('all_services','option')): the_row(); ?>
+                                <div class="item">
+                                    <div class="hs_client_img_wrapper">
+                                        <div class="hs_service_main_box_wrapper">
+                                            <div class="hs_service_icon_main_wrapper">
+                                                <div class="hs_service_icon_wrapper">
+                                                    <img src="<?php echo get_sub_field('service_image','option'); ?>" style="width: 100%; border-radius: 100%;">
+                                                </div>
+                                            </div>
+                                            <div class="hs_service_icon_cont_wrapper">
+                                                <h2><?php echo get_sub_field('service_title','option'); ?></h2>
+                                                <p><?php echo get_sub_field('service_short_texts','option'); ?></p>
+                                                <h5><a href="<?php echo get_sub_field('service_url','option'); ?>">Read More <i class="fa fa-long-arrow-right"></i></a></h5>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="hs_service_icon_cont_wrapper">
-                                        <h2>Relationship Problem Solution</h2>
-                                        <p>Proin gravida nibh vel velit auctor aliquet. Aenean .</p>
-                                        <h5><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></h5>
-                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="hs_client_img_wrapper">
-                                <div class="hs_service_main_box_wrapper">
-                                    <div class="hs_service_icon_main_wrapper">
-                                        <div class="hs_service_icon_wrapper">
-                                            <img src="images/content/2.jpg" style="width: 100%; border-radius: 100%;">
-                                        </div>
-                                    </div>
-                                    <div class="hs_service_icon_cont_wrapper">
-                                        <h2>Relationship Problem Solution</h2>
-                                        <p>Proin gravida nibh vel velit auctor aliquet. Aenean .</p>
-                                        <h5><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="hs_client_img_wrapper">
-                                <div class="hs_service_main_box_wrapper">
-                                    <div class="hs_service_icon_main_wrapper">
-                                        <div class="hs_service_icon_wrapper">
-                                            <img src="images/content/2.jpg" style="width: 100%; border-radius: 100%;">
-                                        </div>
-                                    </div>
-                                    <div class="hs_service_icon_cont_wrapper">
-                                        <h2>Relationship Problem Solution</h2>
-                                        <p>Proin gravida nibh vel velit auctor aliquet. Aenean .</p>
-                                        <h5><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="hs_client_img_wrapper">
-                                <div class="hs_service_main_box_wrapper">
-                                    <div class="hs_service_icon_main_wrapper">
-                                        <div class="hs_service_icon_wrapper">
-                                            <img src="images/content/2.jpg" style="width: 100%; border-radius: 100%;">
-                                        </div>
-                                    </div>
-                                    <div class="hs_service_icon_cont_wrapper">
-                                        <h2>Relationship Problem Solution</h2>
-                                        <p>Proin gravida nibh vel velit auctor aliquet. Aenean .</p>
-                                        <h5><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></h5>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php endwhile; ?>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- hs client slider wrapper End -->
+        <!-- hs client slider wrapper End -->
+    <?php endif; ?>
 <?php get_footer(); ?>

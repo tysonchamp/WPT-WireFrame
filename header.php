@@ -67,7 +67,7 @@
                     </ul>
                 </div>
                 <div class="hs_header_add_wrapper hidden-xs hidden-sm">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/content/hback.jpg" style="width: 100%;">
+                    <img src="<?php echo get_field('header_image','option'); ?>" style="width: 100%;">
                 </div>
                 <!--
                 <div class="hs_header_add_wrapper hidden-xs hidden-sm">
@@ -99,7 +99,7 @@
                 </div>
             </div>
             <div class="banner-header" style="margin-top: 10px;">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/content/hback.jpg" style="width: 100%;">
+                <img src="<?php echo get_field('header_image','option'); ?>" style="width: 100%;">
             </div>
         </div>
     </div>
@@ -164,8 +164,8 @@
                                             <a href="#0" class="cd-close">Close</a>
                                             <ul>
                                                 <li>
-                                                    <form class="cd-search">
-                                                        <input type="search" placeholder="Search...">
+                                                    <form class="cd-search" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
+                                                        <input type="search" name="s" value="<?php echo esc_attr( get_search_query() ); ?>" id="s" placeholder="<?php esc_attr_e( 'Search &hellip;', 'shape' ); ?>">
                                                     </form>
                                                 </li>
                                             </ul>
@@ -219,8 +219,10 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 hidden-xs">
                     <div class="hs_navi_searchbar_wrapper">
-                        <input type="text" placeholder="Search here">
-                        <button><i class="fa fa-search"></i></button>
+                        <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
+                            <input type="text" name="s" value="<?php echo esc_attr( get_search_query() ); ?>" id="s" placeholder="<?php esc_attr_e( 'Search &hellip;', 'shape' ); ?>">
+                            <button><i class="fa fa-search"></i></button>
+                        </form>
                     </div>
                 </div>
             </div>
